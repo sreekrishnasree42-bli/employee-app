@@ -1,0 +1,37 @@
+<%- include('navbar') %>
+
+<div class="card shadow mx-auto" style="max-width: 500px;">
+  <div class="card-body">
+    <h3 class="card-title text-center mb-4">Add Employee</h3>
+
+    <form action="/add" method="POST">
+      <div class="mb-3">
+        <label class="form-label">Employee Name</label>
+        <input type="text" name="employeeName" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Designation</label>
+        <input type="text" name="employeeDesignation" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Location</label>
+        <input type="text" name="employeeLocation" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Salary</label>
+        <input type="number" name="salary" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn btn-success w-100">
+        Add Employee
+      </button>
+    </form>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

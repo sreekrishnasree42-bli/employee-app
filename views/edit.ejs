@@ -1,0 +1,61 @@
+<%- include('navbar') %>
+
+<div class="card shadow mx-auto" style="max-width: 500px;">
+  <div class="card-body">
+    <h3 class="card-title text-center mb-4">Edit Employee</h3>
+
+    <form action="/edit/<%= employee._id %>?_method=PUT" method="POST">
+      <div class="mb-3">
+        <label class="form-label">Employee Name</label>
+        <input 
+          type="text" 
+          name="employeeName" 
+          value="<%= employee.employeeName %>" 
+          class="form-control" 
+          required
+        >
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Designation</label>
+        <input 
+          type="text" 
+          name="employeeDesignation" 
+          value="<%= employee.employeeDesignation %>" 
+          class="form-control" 
+          required
+        >
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Location</label>
+        <input 
+          type="text" 
+          name="employeeLocation" 
+          value="<%= employee.employeeLocation %>" 
+          class="form-control" 
+          required
+        >
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Salary</label>
+        <input 
+          type="number" 
+          name="salary" 
+          value="<%= employee.salary %>" 
+          class="form-control" 
+          required
+        >
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">
+        Update Employee
+      </button>
+    </form>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

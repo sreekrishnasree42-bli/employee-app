@@ -1,0 +1,43 @@
+<%- include('navbar') %>
+
+<h2 class="mb-4 text-center">Employee List</h2>
+
+<table class="table table-bordered table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Designation</th>
+      <th>Location</th>
+      <th>Salary</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% employees.forEach(emp => { %>
+      <tr>
+        <td><%= emp.employeeName %></td>
+        <td><%= emp.employeeDesignation %></td>
+        <td><%= emp.employeeLocation %></td>
+        <td>₹ <%= emp.salary %></td>
+        <td>
+          <a href="/edit/<%= emp._id %>" class="btn btn-warning btn-sm">Edit</a>
+
+          <form 
+            action="/delete/<%= emp._id %>?_method=DELETE" 
+            method="POST" 
+            style="display:inline;"
+          >
+            <button class="btn btn-danger btn-sm" type="submit">
+              Delete
+            </button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+</div>
+</body>
+</html>
